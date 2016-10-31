@@ -1,0 +1,15 @@
+image: ruby:2.3
+
+before_script:
+  - apt-get update -qq && apt-get install -y -qq sqlite3 libsqlite3-dev nodejs
+  - gem install bundler
+  - bundle install
+
+testunit:
+  script:
+    - rails db:migrate RAILS_ENV=test
+    - rails test
+
+rubocop:
+  script:
+    - bundle exec rubocop -a
