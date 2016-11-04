@@ -21,6 +21,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @identity.update_attribute( :user_id, @user.id )
     end
 
+    @user.skip_confirmation!
+
     if @user.email.blank? && @identity.email
       @user.update_attribute( :email, @identity.email)
     end
