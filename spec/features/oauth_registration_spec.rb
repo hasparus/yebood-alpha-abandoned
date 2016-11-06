@@ -29,7 +29,8 @@ feature "OAuthRegistrations", :type => :feature do
     end
 
     it "should let you set your password initially" do
-      login_as create( :oauth_user ), scope: :user
+      user = create( :oauth_user )
+      login_as user, scope: :user
 
       visit edit_user_registration_path
 
@@ -38,6 +39,14 @@ feature "OAuthRegistrations", :type => :feature do
         fill_in "user[password]", with: "password"
         fill_in "user[password_confirmation]", with: "password"
       end
+
+
+
+      #todo if confirmable authorize email?
+      if User.devise_modules.include? :confirmable
+        user.confirmed_at = Time.now
+      end
+      #try1
 
       click_button "Update"
 

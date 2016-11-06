@@ -17,11 +17,13 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = @identity.user || current_user
 
     if @user.nil?
-      @user = User.create( email: @identity.email, oauth_callback: true )
+      @user = User.new( email: @identity.email, oauth_callback: true )
+      @user.skip_confirmation!
+      @user.save!
+      
       @identity.update_attribute( :user_id, @user.id )
     end
 
-    @user.skip_confirmation!
 
     if @user.email.blank? && @identity.email
       @user.update_attribute( :email, @identity.email)
