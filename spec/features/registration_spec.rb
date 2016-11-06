@@ -29,6 +29,10 @@ feature "Registration", :type => :feature do
       expect( page.body ).to include( "Welcome! You have signed up successfully." )
     end
 
+    fill_in "user_email", with: "test@example.com"
+    fill_in "user_password", with: "123456789"
+    click_button "Log in"
+
     click_link "Profile"
   end
 
@@ -74,11 +78,18 @@ feature "Registration", :type => :feature do
       expect( page.body ).to include( "Welcome! You have signed up successfully." )
     end
 
+
+    fill_in "user_email", with: "test@example.com"
+    fill_in "user_password", with: "123456789"
+    click_button "Log in"
+
     click_link "Profile"
+
+
 
     within "#edit_user" do
       fill_in "user_password", with: "012345678"
-      fill_in "user_password_confirmation", with: "012345678"      
+      fill_in "user_password_confirmation", with: "012345678"
     end
 
     click_button "Update"
@@ -87,8 +98,9 @@ feature "Registration", :type => :feature do
 
     within "#edit_user" do
       fill_in "user_password", with: "012345678"
-      fill_in "user_password_confirmation", with: "012345678"
+
       fill_in "user_current_password", with: "123456789"
+      fill_in "user_password_confirmation", with: "012345678"
     end
 
     click_button "Update"
