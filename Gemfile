@@ -72,6 +72,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'ruby-debug-ide'
+  gem 'debase'
 end
 
 group :test do
