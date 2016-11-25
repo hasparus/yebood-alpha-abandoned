@@ -1,17 +1,18 @@
+# frozen_string_literal: true
 class SetupController < ApplicationController
   before_action :require_local!
   layout :false
 
   def index
-    @env = File.read( File.join( Rails.root, ".env" ) )
+    @env = File.read(File.join(Rails.root, '.env'))
     @docs = files
   end
-  
+
   protected
 
   def require_local!
     unless local_request?
-      redirect_to root_url, error: "This information is only available to local requests"
+      redirect_to root_url, error: 'This information is only available to local requests'
     end
   end
 
@@ -20,9 +21,9 @@ class SetupController < ApplicationController
   end
 
   def files
-    docs = Dir.glob(File.join( Rails.root, "docs/README.*" )).collect do |file|
-      name = file.gsub( /.*README.\d\d./, "happy_seed:" ).gsub( /.rdoc/, "" )
-      html = RDiscount.new( File.read( file ) ).to_html
+    docs = Dir.glob(File.join(Rails.root, 'docs/README.*')).collect do |file|
+      name = file.gsub(/.*README.\d\d./, 'happy_seed:').gsub(/.rdoc/, '')
+      html = RDiscount.new(File.read(file)).to_html
       { name: name, html: html }
     end
   end

@@ -1,0 +1,23 @@
+
+.category-name {
+  a {
+    color: $gray-dark;
+  }
+}
+
+.categories {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+.category-icon {
+  $icon-size: 64px;
+  height: $icon-size;
+  width: $icon-size;
+  margin-right: 5px;
+}
