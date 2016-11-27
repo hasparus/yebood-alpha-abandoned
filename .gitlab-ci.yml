@@ -5,10 +5,10 @@ before_script:
   - gem install bundler
   - bundle install
 
-testunit:
+rspec:
   script:
     - rails db:migrate RAILS_ENV=test
-    - rails test
+    - rspec
 
 rubocop:
   script:
