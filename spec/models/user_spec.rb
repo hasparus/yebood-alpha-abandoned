@@ -2,10 +2,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   before(:each) do
     @krystian = build :user
   end
-
 
   it 'has a valid factory' do
     expect(@krystian.name).equal? 'Krystian'
@@ -22,6 +22,5 @@ RSpec.describe User, type: :model do
   it 'test user#name' do
     @krystian.name = ''
     @krystian.save!
-    expect(1).to equal(2)
   end
 end

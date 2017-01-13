@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :post do
-    content "MyString"
+    user   # implicit
+    topic  # associations
+    content 'a' * 20
   end
 end

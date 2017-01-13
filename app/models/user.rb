@@ -10,8 +10,8 @@ class User < ApplicationRecord
   validates :password, presence: { if: :password_required? }
   validates :password, confirmation: { if: :password_required? }
   validates :password, length: { within: Devise.password_length, allow_blank: true }
-
   validates :name, uniqueness: true
+
 
   def password_required?
     return false if email.blank? || !email_required?
@@ -22,6 +22,7 @@ class User < ApplicationRecord
     !@oauth_callback
   end
   has_many :identities, dependent: :destroy
+  has_many :posts
   enum role: [:user, :admin]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

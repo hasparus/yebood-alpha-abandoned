@@ -1,13 +1,14 @@
- 
- 
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_category,
+                only: [:create, :destroy]
+  before_action :set_topic,
+                only: [:show, :edit, :update, :destroy]
 
   respond_to :html, :json, :js
 
-  def index
-    @topics = Topic.all
-  end 
+  # def index
+  #   @topics = Topic.all
+  # end
 
   def show
   end 
@@ -20,7 +21,7 @@ class TopicsController < ApplicationController
   end 
 
   def create
-    @topic = Topic.new(topic_params)
+    @topic = @category.topics.new(topic_params)
     @topic.save
     respond_with(@topic)
   end 
@@ -37,8 +38,12 @@ class TopicsController < ApplicationController
   end 
 
   private
+    def set_category
+      @category = Category.find_by category_slug: params[:category_slug]
+    end
+
     def set_topic
-      @topic = Topic.find(params[:id])
+      @topic = Topic.find_by topic_slug: params[:topic_slug]
     end 
 
     def topic_params
