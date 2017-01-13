@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  # Nie zmieniaj kolejnosci, te reguly sie pokrywaja.
+
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
   get '/setup' => 'setup#index'
 
