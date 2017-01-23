@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe Topic, type: :model do
-
   before(:each) do
     @topic = build :topic
   end
@@ -20,9 +20,8 @@ RSpec.describe Topic, type: :model do
     expect(@topic).not_to be_valid
   end
 
-  it 'should have slug' do
-    @topic.slug = ' '
-    expect(@topic).not_to be_valid
+  it 'should receive slug before validation' do
+    @topic.topic_slug = ' '
+    expect(@topic).to be_valid
   end
-
 end

@@ -2,14 +2,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   before(:each) do
     @krystian = build :user
   end
 
   it 'has a valid factory' do
     expect(@krystian.name).equal? 'Krystian'
-    #todo more
+    # TODO: more
   end
 
   it 'should not create user without email' do

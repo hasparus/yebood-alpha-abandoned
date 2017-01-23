@@ -12,7 +12,6 @@ class User < ApplicationRecord
   validates :password, length: { within: Devise.password_length, allow_blank: true }
   validates :name, uniqueness: true
 
-
   def password_required?
     return false if email.blank? || !email_required?
     !persisted? || !password.nil? || !password_confirmation.nil?

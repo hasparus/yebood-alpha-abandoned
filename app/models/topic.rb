@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Topic < ApplicationRecord
   # include Sluggable
 
@@ -5,8 +6,8 @@ class Topic < ApplicationRecord
   has_many :posts
   default_scope -> { order(id: :desc) }
   validates :category, presence: true
- # validates :name, presence: true
- # validates :name, uniqueness: { case_sensitive: false }
+  # validates :name, presence: true
+  # validates :name, uniqueness: { case_sensitive: false }
   validates :topic_slug, presence: true
   validates :topic_slug, uniqueness: { scope: :category_id }
   before_validation :set_slug

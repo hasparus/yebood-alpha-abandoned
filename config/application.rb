@@ -7,9 +7,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-unless Rails.env.production?
-  Dotenv::Railtie.load
-end
+Dotenv::Railtie.load unless Rails.env.production?
 
 module Yebood
   class Application < Rails::Application

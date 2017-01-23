@@ -4,6 +4,6 @@ p
   strong Name:
   = @topic.name
 
-= link_to 'Edit', edit_topic_path(@topic)
+= link_to 'Edit', edit_category_topic_path(@category, @topic)
 '|
-= link_to 'Back', topics_path
+= link_to 'Back', category_topics_path

@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
   def authenticate
     unless ENV['HTTP_AUTH_USERNAME'].blank? || ENV['HTTP_AUTH_PASSWORD'].blank?
       authenticate_or_request_with_http_basic do |username, password|

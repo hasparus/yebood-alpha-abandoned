@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Post < ApplicationRecord
   belongs_to :topic
   belongs_to :user

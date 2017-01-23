@@ -64,7 +64,6 @@ RSpec.configure do |config|
     config.include ::Rails::Controller::Testing::Integration, type: type
     config.include Devise::Test::IntegrationHelpers
   end
-
 end
 
 VCR.configure do |c|

@@ -6,23 +6,21 @@ Rails.application.routes.draw do
   get '/setup' => 'setup#index'
 
   root 'categories#index'
-  get '/:category_slug' => 'categories#show'
+  #get '/:category_slug' => 'categories#show'
 
   resources :categories,
             only: [:show, :index],
             param: :category_slug,
-            path: '/'
+            path: '/' do
 
-  resources :topics,
-            except: [:index],
-            param: :topic_slug,
-            path: '/:category_slug' do
+    resources :topics,
+              except: [:index],
+              param: :topic_slug,
+              path: '/' do
 
-    resources :posts
-
+      resources :posts
+    end
   end
-
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

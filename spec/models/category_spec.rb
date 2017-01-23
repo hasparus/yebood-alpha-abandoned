@@ -2,7 +2,6 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-
   before(:each) do
     @category = build :category
   end
@@ -16,10 +15,8 @@ RSpec.describe Category, type: :model do
     expect(@category).not_to be_valid
   end
 
-  it 'should have slug' do
-    @category.slug = ' '
-    expect(@category).not_to be_valid
+  it 'should receive slug before validation' do
+    @category.category_slug = ' '
+    expect(@category).to be_valid
   end
-
-
 end
