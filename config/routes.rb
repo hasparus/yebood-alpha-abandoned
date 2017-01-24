@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
   get '/setup' => 'setup#index'
 
-  root 'categories#index'
+  root 'application#index'
+  get '/categories' => 'categories#index'
   #get '/:category_slug' => 'categories#show'
-
   resources :categories,
             only: [:show, :index],
             param: :category_slug,
