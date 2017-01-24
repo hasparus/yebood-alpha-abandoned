@@ -13,3 +13,5 @@ p#notice = notice
       - @topic.posts.each do |post|
         li = render post
       = link_to 'New post', new_category_topic_post_path(@category, @topic)
+      li.new-post
+        form_for
