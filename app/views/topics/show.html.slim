@@ -1,9 +1,15 @@
 p#notice = notice
 
-p
-  strong Name:
-  = @topic.name
+.container
+  .row
+    div
+      p#topic_name
+        h1 = @topic.name
+    = link_to 'Edit', edit_category_topic_path(@category, @topic)
+    = link_to 'Back', category_topics_path
 
-= link_to 'Edit', edit_category_topic_path(@category, @topic)
-'|
-= link_to 'Back', category_topics_path
+  .row
+    ol#posts
+      - @topic.posts.each do |post|
+        li = render post
+      = link_to 'New post', new_category_topic_post_path(@category, @topic)

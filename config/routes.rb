@@ -18,7 +18,8 @@ Rails.application.routes.draw do
               param: :topic_slug,
               path: '/' do
 
-      resources :posts
+      resources :posts,
+                except: [:show, :index]
     end
   end
 

@@ -34,7 +34,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic.destroy
-    redirect_to topics_url, notice: 'Topic was successfully destroyed.'
+    redirect_to @category, notice: 'Topic was successfully destroyed.'
   end
 
   private
