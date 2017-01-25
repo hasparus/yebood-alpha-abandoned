@@ -12,6 +12,7 @@ p#notice = notice
     ol#posts
       - @topic.posts.each do |post|
         li = render post
-      = link_to 'New post', new_category_topic_post_path(@category, @topic)
+      // = link_to   'New post', new_category_topic_post_path(@category, @topic)
       li.new-post
-        form_for
+        = render '/posts/form.html.slim'
+      p wololo
