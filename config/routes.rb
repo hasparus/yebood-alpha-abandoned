@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root 'application#index'
   get '/categories' => 'categories#index'
   #get '/:category_slug' => 'categories#show'
+
+  #post '/:category_category_slug/:topic_topic_slug(.:format)' => 'posts#create', as: 'cool_post_create'
+
   resources :categories,
             only: [:show, :index],
             param: :category_slug,
@@ -22,6 +25,4 @@ Rails.application.routes.draw do
                 except: [:show, :index]
     end
   end
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

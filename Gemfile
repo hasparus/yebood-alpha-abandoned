@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
+#ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -51,6 +52,9 @@ end
 gem 'rails_12factor'
 gem 'slim-rails'
 gem 'haml'
+
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec', '~> 3.5.0'
@@ -66,7 +70,6 @@ group :development, :test do
   gem 'launchy'
   gem 'vcr'
   gem 'faker'
-  gem 'dotenv-rails'
   gem 'rdiscount'
   gem 'rails-controller-testing'
   gem 'better_errors'

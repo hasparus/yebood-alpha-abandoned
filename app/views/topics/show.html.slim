@@ -12,6 +12,15 @@ p#notice = notice
     ol#posts
       - @topic.posts.each do |post|
         li = render post
-      = link_to 'New post', new_category_topic_post_path(@category, @topic)
+      // = link_to   'New post', new_category_topic_post_path(@category, @topic)
+      li.mock-post
+        strong Pan Prezes
+        p Drogi Marszałku, Wysoka Izbo.
+      li.mock-post
+        strong Kolega Prezesa
+        p PKB rośnie. Z drugiej strony, wzmocnienie i rozwijanie struktur spełnia ważne z dotychczasowymi zasadami dalszych kierunków postępowego wychowania.
+      li.mock-post
+        strong Pan Romuald
+        p Tak samo istotne jest ważne z dotychczasowymi zasadami modelu rozwoju. W związku z szerokim aktywem zmusza nas do przeanalizowania odpowiednich warunków aktywizacji.
       li.new-post
-        form_for
+        = render '/posts/form.html.slim'

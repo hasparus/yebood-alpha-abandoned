@@ -1,12 +1,16 @@
-= form_for([@category, @topic, post]) do |f|
+- if @post.nil?
+  - @post = @topic.posts.new
+= form_for [@category, @topic, @post], url: category_topic_path(@category, @topic) do |f|
   - if @post.errors.any?
     #error_explanation
       h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
       ul
         - @post.errors.full_messages.each do |message|
           li = message
-
   .field
-    = f.label :content
-    = f.text_field :content
+    div
+      //= f.label :content
+      strong = current_user&.name || 'Anonymous'
+    div
+      = f.text_field :content
   .actions = f.submit
