@@ -8,6 +8,9 @@
         - @post.errors.full_messages.each do |message|
           li = message
   .field
-    = f.label :content
-    = f.text_field :content
+    div
+      //= f.label :content
+      strong = current_user&.name || 'Anonymous'
+    div
+      = f.text_field :content
   .actions = f.submit

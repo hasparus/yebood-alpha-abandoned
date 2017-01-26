@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   respond_to :html, :json, :js
 
   def new
-    @post = @topic.posts.new user: current_user
+    @post = @topic.posts.new
   end
 
   def edit
@@ -15,14 +15,17 @@ class PostsController < ApplicationController
 
   def create
     @post = @topic.posts.new(post_params)
+    if @post.user.nil?
+      @post.user = User.find_by name: 'Anonymous'
+    end
     @post.save
-    respond_with(@post)
+    respond_with @category, @topic
   end
 
   def update
     @post.update(post_params)
     flash[:notice] = 'Post was successfully updated.'
-    respond_with(@post)
+    respond_with @category, @topic
   end
 
   def destroy
