@@ -4,4 +4,4 @@
     ol.topics
       - @category.topics.each do |topic|
         li = render topic
-      = button_to t('.new_topic'), new_category_topic_path(@category), class: 'btn btn-primary center-block', type: 'button'
+      = button_to t('.new_topic'), new_category_topic_path(@category), class: 'btn btn-primary center-block', type: 'button', method: :get

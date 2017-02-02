@@ -8,4 +8,11 @@ RSpec.describe 'Topics', type: :request do
   #     expect(response).to have_http_status(200)
   #   end
   # end
+
+  describe 'request new topic' do
+    it 'gets new_category_topic' do
+      get new_category_topic_path(:category)
+      expect(response).to have_http_status(:ok)
+    end
+  end
 end

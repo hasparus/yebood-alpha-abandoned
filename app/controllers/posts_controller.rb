@@ -14,6 +14,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    if params[:topic_topic_slug] == 'new'
+      raise 'oh right'
+    end
+
     @post = @topic.posts.new(post_params)
     if @post.user.nil?
       @post.user = User.find_by name: 'Anonymous'

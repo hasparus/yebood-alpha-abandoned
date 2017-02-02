@@ -6,21 +6,20 @@ class TopicsController < ApplicationController
 
   respond_to :html, :json, :js
 
-  # def index
-  #   @topics = Topic.all
-  # end
-
   def show
   end
 
   def new
-    @topic = Topic.new
+    @topic = @category.topics.new
   end
 
   def edit
   end
 
   def create
+    if topic_params[:name] == 'new'
+      raise 'OH RIGHT.'
+    end
     @topic = @category.topics.new(topic_params)
     @topic.save
     respond_with(@category, @topic)
