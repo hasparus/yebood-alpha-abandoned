@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   respond_to :html, :json, :js
 
   def new
-    @post = @topic.posts.new
+    @post = @topic.posts.new user_id: current_user
   end
 
   def edit
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
     @post = @topic.posts.new(post_params)
     if @post.user.nil?
-      @post.user = User.find_by name: 'Anonymous'
+      @post.user = current_user || User.find_by(name: 'Anonymous')
     end
     @post.save
     respond_with @category, @topic
