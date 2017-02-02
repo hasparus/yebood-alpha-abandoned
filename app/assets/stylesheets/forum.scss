@@ -42,3 +42,38 @@ body {
   // font-size: 1.6em;
 }
 
+body.topics > div.container > div.row > a {
+  padding-left: 1em;
+  padding-right: 2em;
+  padding-bottom: 4em;
+}
+
+ol#posts {
+  margin-top: 2em;
+}
+
+em#logo {
+  font-size: 2em;
+}
+
+.navv {
+  nav {
+    background-color: $gray !important;
+    color: $whyte !important;
+  }
+
+  .navbar-default .navbar-brand {
+    color: $whyte;
+  }
+  li {
+    a {
+      color: $whyte !important;
+      border-bottom: 1px solid $gray;
+      &:hover {
+        background-color: #2a2929 !important;
+        border-bottom: 1px solid $logo-color;
+      }
+    }
+  }
+
+}

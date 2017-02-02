@@ -1,0 +1,21 @@
+pl:
+  back: 'Wróć'
+  locale: 'Ustawienia regionalne'
+  flag_icon_url: 'http://l10n.xwiki.org/xwiki/bin/download/L10N/Flags/pl.png'
+  contact: 'Kontakt'
+  profile: 'Profil'
+  about: 'O nas'
+  sign_out: 'Wyloguj się'
+  log_in: 'Logowanie'
+  register: 'Rejestracja'
+  forgot: 'Zapomniałeś hasła?'
+  didnt_confirm: "Nie otrzmałeś e-maila potwierdzającego?"
+  didnt_unlock: "Nie otrzmałeś e-maila odblokowującego?"
+  log_in_by: "Zaloguj się przez"
+
+  categories:
+    show:
+      new_topic: 'Nowy temat'
+
+  edit: 'Edytuj'
+  delete: 'Usuń'

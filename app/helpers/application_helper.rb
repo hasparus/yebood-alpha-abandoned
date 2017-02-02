@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 module ApplicationHelper
+  include LocaleHelper
+
   def flash_class(level)
     case level.to_sym
       # allow either standard rails flash category symbols...
