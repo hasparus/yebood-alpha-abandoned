@@ -5,8 +5,8 @@ p#notice = notice
     div
       p#topic_name
         h1 = @topic.name
-    = link_to 'Edytuj', edit_category_topic_path(@category, @topic)
-    = link_to 'Wróć', category_topics_path
+    = link_to t('edit'), edit_category_topic_path(@category, @topic)
+    = link_to t('back'), category_topics_path
 
   .row
     ol#posts

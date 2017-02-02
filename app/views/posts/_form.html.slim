@@ -13,4 +13,7 @@
       strong = current_user&.name || 'Anonymous'
     div
       = f.text_field :content
-  .actions = f.submit
+    / .actions = f.submit
+    .actions
+      = button_tag type: 'submit', class: "btn btn-primary center-block" do
+        = t('create_post')

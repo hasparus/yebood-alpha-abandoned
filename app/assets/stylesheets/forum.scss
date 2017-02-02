@@ -56,6 +56,14 @@ em#logo {
   font-size: 2em;
 }
 
+.new_post {
+  input {
+    margin: 1em;
+    width: 95%;
+    height: 10em;
+  }
+}
+
 .navv {
   nav {
     background-color: $gray !important;
@@ -65,12 +73,39 @@ em#logo {
   .navbar-default .navbar-brand {
     color: $whyte;
   }
+
+  .navbar-default .navbar-toggle {
+    border-color: $whyte;
+    &:hover {
+      background-color: #2c2b2b;
+    }
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: $whyte;
+  }
+
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent;
+  }
+
+  .navbar-collapse {
+    box-shadow: none;
+  }
+
+  li.active {
+    a {
+      background-color: #2c2b2b !important;
+      border-bottom: 1px solid $commentary-color;
+    }
+  }
+
   li {
     a {
       color: $whyte !important;
       border-bottom: 1px solid $gray;
       &:hover {
-        background-color: #2a2929 !important;
+        background-color: #2c2b2b !important;
         border-bottom: 1px solid $logo-color;
       }
     }
