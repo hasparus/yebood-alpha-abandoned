@@ -2,6 +2,7 @@ p#notice = notice
 
 .container
   .row
+    - breadcrumb :topic, @topic
     div
       p#topic_name
         h1 = @topic.name

@@ -1,5 +1,6 @@
 .container
   .row
+    - breadcrumb :category, @category
     = render @category
     ol.topics
       - @category.topics.each do |topic|

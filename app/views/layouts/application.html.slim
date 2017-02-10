@@ -6,6 +6,7 @@ html.no-js
     = render 'chromeframe'
     = render 'header'
     = render 'flashes'
+    == breadcrumbs pretext: t('you_are_here'), separator: "", style: :bootstrap, semantic: true
 
     = yield
 
