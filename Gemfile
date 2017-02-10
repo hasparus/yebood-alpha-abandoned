@@ -47,11 +47,15 @@ end
 gem 'rails_12factor'
 gem 'slim-rails'
 gem 'haml'
+gem 'gretel'
+
 
 gem 'dotenv-rails'
 
 gem 'sqlite3'
 gem 'listen', '~> 3.0.5'
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 group :test, :development do
   gem 'byebug', platform: :mri

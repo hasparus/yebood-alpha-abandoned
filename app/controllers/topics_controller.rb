@@ -6,21 +6,22 @@ class TopicsController < ApplicationController
 
   respond_to :html, :json, :js
 
-  # def index
-  #   @topics = Topic.all
-  # end
-
   def show
+    @posts = @topic.posts.order('created_at DESC').paginate(page: params[:page], :per_page => 10)
+
   end
 
   def new
-    @topic = Topic.new
+    @topic = @category.topics.new
   end
 
   def edit
   end
 
   def create
+    if topic_params[:name] == 'new'
+      raise 'OH RIGHT.'
+    end
     @topic = @category.topics.new(topic_params)
     @topic.save
     respond_with(@category, @topic)

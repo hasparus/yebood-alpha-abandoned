@@ -1,5 +1,6 @@
 .container
   .row
+    - breadcrumb :root
     ul.categories
       - Category.all.each do |cat| # TODO(hasparus) check if replacement of @categories is correct
         li = render cat

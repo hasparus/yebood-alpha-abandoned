@@ -7,16 +7,21 @@ class PostsController < ApplicationController
   respond_to :html, :json, :js
 
   def new
-    @post = @topic.posts.new
+    @post = @topic.posts.new user_id: current_user
+    @topic.touch
   end
 
   def edit
   end
 
   def create
+    if params[:topic_topic_slug] == 'new'
+      raise 'oh right'
+    end
+
     @post = @topic.posts.new(post_params)
     if @post.user.nil?
-      @post.user = User.find_by name: 'Anonymous'
+      @post.user = current_user || User.find_by(name: 'Anonymous')
     end
     @post.save
     respond_with @category, @topic

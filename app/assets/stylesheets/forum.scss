@@ -64,6 +64,18 @@ em#logo {
   }
 }
 
+ol.topics {
+  list-style: none;
+  li {
+    border-bottom: 1px $gray solid;
+    margin: .5em;
+
+    li {
+      border-bottom: none;
+    }
+  }
+}
+
 .navv {
   nav {
     background-color: $gray !important;
