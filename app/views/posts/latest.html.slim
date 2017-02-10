@@ -1,7 +1,5 @@
-.container
-  .row
-    ul.latest
-      li post1
-      li post2
-      li post3
-      // TODO(hasparus) po timestampie zrobić filtrowanie i wypisać
+ol.latest
+  - Post.latest.each do |post|
+    li
+      = mini_breadcrumb(post) || 'BEZ TEMATU POWIADOM ADMINA'
+      = render post

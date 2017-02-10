@@ -29,6 +29,11 @@ class PostsController < ApplicationController
     respond_with @category, @topic
   end
 
+  def latest
+    # tak nie dzialalo wiec gwalcimy mvc
+    @latest = Post.latest
+  end
+
   def update
     @post.update(post_params)
     flash[:notice] = 'Post was successfully updated.'

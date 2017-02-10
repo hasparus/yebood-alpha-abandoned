@@ -64,6 +64,13 @@ em#logo {
   }
 }
 
+ol#posts {
+  list-style: none;
+  li {
+    margin: .5em;
+  }
+}
+
 ol.topics {
   list-style: none;
   li {
@@ -73,6 +80,14 @@ ol.topics {
     li {
       border-bottom: none;
     }
+  }
+}
+
+ol.latest {
+  li {
+    max-width: 100%;
+    margin: .5em;
+    border-bottom: 1px $gray solid;
   }
 }
 

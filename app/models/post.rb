@@ -5,4 +5,10 @@ class Post < ApplicationRecord
   validates :user, presence: true
   validates :topic, presence: true
   validates :content, presence: true
+
+  class << self
+    def latest how_much=6
+      @latest_posts ||= Post.includes(:topic).limit how_much
+    end
+  end
 end
