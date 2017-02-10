@@ -9,7 +9,7 @@ RSpec.describe 'Topics', type: :request do
   #   end
   # end
 
-  #describe 'request new topic' do
+  #describe 'request new topic' docd
   #  it 'gets new_category_topic' do
   #    get new_category_topic_path(:category)
   #    expect(response).to have_http_status(:ok)

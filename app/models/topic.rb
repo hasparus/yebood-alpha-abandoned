@@ -4,7 +4,7 @@ class Topic < ApplicationRecord
 
   belongs_to :category
   has_many :posts
-  default_scope -> { order(id: :desc) }
+  default_scope -> { order(updated_at: :desc) }
   validates :category, presence: true
   # validates :name, presence: true
   # validates :name, uniqueness: { case_sensitive: false }
