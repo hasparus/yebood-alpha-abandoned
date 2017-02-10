@@ -8,7 +8,8 @@ html.no-js
     = render 'flashes'
 
     .container
-      == breadcrumbs pretext: t('you_are_here'), separator: "", style: :bootstrap, semantic: true
+      #breadcrumbs
+        == breadcrumbs pretext: t('you_are_here'), separator: "", style: :bootstrap, semantic: true
       = yield
 
     = render 'footer'

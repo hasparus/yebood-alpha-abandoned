@@ -20,3 +20,5 @@ pl:
   edit: 'Edytuj'
   delete: 'Usuń'
   create_post: 'Napisz posta'
+  home: 'Strona główna'
+  here: 'Jesteś tu:'
