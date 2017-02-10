@@ -124,3 +124,15 @@ ol.topics {
   }
 
 }
+
+#indexbox {
+  display: inline-block;
+}
+
+#postbox {
+  @extend #indexbox;
+}
+
+#categorybox {
+  @extend #indexbox;
+}

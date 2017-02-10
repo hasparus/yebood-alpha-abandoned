@@ -1,4 +1,6 @@
-.posts
-  = render :template => 'posts/latest'
-.categories
-  = render :template => 'categories/index'
+- breadcrumb :root
+.row
+  #postbox.col-12.col-sm-4
+    = render :template => 'posts/latest'
+  #categorybox.col-12.col-sm-8
+    = render :template => 'categories/index'

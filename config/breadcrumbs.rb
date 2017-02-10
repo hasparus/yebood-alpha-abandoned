@@ -1,5 +1,5 @@
 crumb :root do
-  link "Home", root_path
+  link t('home'), root_path
 end
 
  crumb :category do |category|

@@ -6,9 +6,11 @@ html.no-js
     = render 'chromeframe'
     = render 'header'
     = render 'flashes'
-    == breadcrumbs pretext: t('you_are_here'), separator: "", style: :bootstrap, semantic: true
 
-    = yield
+    .container
+      #breadcrumbs
+        == breadcrumbs pretext: t('you_are_here'), separator: "", style: :bootstrap, semantic: true
+      = yield
 
     = render 'footer'
     = debug(params) if Rails.env.development?

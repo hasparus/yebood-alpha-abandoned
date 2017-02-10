@@ -24,6 +24,8 @@ class PostsController < ApplicationController
       @post.user = current_user || User.find_by(name: 'Anonymous')
     end
     @post.save
+    @topic.touch
+
     respond_with @category, @topic
   end
 
