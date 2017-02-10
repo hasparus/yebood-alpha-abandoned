@@ -10,8 +10,10 @@ p#notice = notice
     = link_to t('back'), category_topics_path
 
   .row
+    p dupa
+    = will_paginate @posts
     ol#posts
-      - @topic.posts.each do |post|
+      - @posts.each do |post|
         li = render post
       // = link_to   'New post', new_category_topic_post_path(@category, @topic)
       li.mock-post

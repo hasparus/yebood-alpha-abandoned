@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def new
     @post = @topic.posts.new user_id: current_user
+    @topic.touch
   end
 
   def edit

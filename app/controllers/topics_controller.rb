@@ -7,6 +7,8 @@ class TopicsController < ApplicationController
   respond_to :html, :json, :js
 
   def show
+    @posts = @topic.posts.order('created_at DESC').paginate(page: params[:page], :per_page => 10)
+
   end
 
   def new
