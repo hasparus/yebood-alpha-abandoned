@@ -1,5 +1,5 @@
 .container
   .row
-    h1 New topic
+    h1 = t(:new_topic)
     == render 'form'
-    = link_to 'Back', category_topics_path
+    = link_to t(:back), category_topics_path

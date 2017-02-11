@@ -2,8 +2,10 @@
   ul
     li = link_to topic.name, (category_path(@category) + '/' + topic.topic_slug)
     li = topic.posts.length
-    li = link_to 'Edit', (category_path(@category) + '/' + topic.topic_slug + '/edit')
-    li = link_to 'Destroy', category_topic_path(@category, topic), data: {confirm: 'Are you sure?'}, method: :delete
+    li = topic.updated_at
+    li = topic.created_at
+    li = link_to t(:edit), (category_path(@category) + '/' + topic.topic_slug + '/edit')
+    li = link_to t(:delete), category_topic_path(@category, topic), data: {confirm: 'Jesteś pewny?'}, method: :delete
 
-  // Helpery nie dzialajo, bo cos zrypałem z rutami.
+      // Helpery nie dzialajo, bo cos zrypałem z rutami.
   // Patrz jaki hak paskudny!

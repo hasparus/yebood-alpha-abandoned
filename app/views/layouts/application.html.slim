@@ -7,10 +7,13 @@ html.no-js
     = render 'header'
     = render 'flashes'
 
-    = yield
+    .container
+      #breadcrumbs
+        == breadcrumbs pretext: t('you_are_here'), separator: "", style: :bootstrap, semantic: true
+      = yield
 
     = render 'footer'
-    //= debug(params) if Rails.env.development?
+    = debug(params) if Rails.env.development?
 
     / Javascript at the bottom for fast page loading
     = render 'javascripts'

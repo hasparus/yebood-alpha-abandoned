@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
-#ruby '2.3.1'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -28,11 +28,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
-end
-
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
@@ -52,10 +47,15 @@ end
 gem 'rails_12factor'
 gem 'slim-rails'
 gem 'haml'
-
+gem 'gretel'
 gem 'dotenv-rails'
+gem 'listen', '~> 3.0.5'
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
 
-group :development, :test do
+group :test, :development do
+  gem 'byebug', platform: :mri
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3'
   gem 'rspec', '~> 3.5.0'
   gem 'rspec-rails', '~> 3.5.0'
@@ -80,7 +80,9 @@ end
 
 group :test do
   gem 'webmock'
-  gem 'fakeredis', require: 'fakeredis/rspec'
+  # gem 'rspec', '~> 3.5.0'
+  # gem 'rspec-rails', '~> 3.5.0'
+  # gem 'fakeredis', require: 'fakeredis/rspec'
 end
 
 group :production do

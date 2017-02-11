@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate
+  before_action :set_locale
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
 
   def access_denied(exception)
     redirect_to root_path, alert: exception.message
+  end
+
+  def set_locale
+    I18n.locale = (current_user.locale if current_user) || session[:locale] || :en
   end
 
   protected

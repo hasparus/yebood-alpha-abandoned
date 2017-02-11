@@ -20,4 +20,27 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  back: 'Back'
+  locale: 'Locale'
+  flag_icon_url: 'http://l10n.xwiki.org/xwiki/bin/download/L10N/Flags/en.png'
+  contact: 'Contact'
+  profile: 'Profile'
+  about: 'About'
+  sign_out: 'Sign out'
+  log_in: 'Log in'
+  register: 'Sign up'
+  forgot: 'Forgot your password?'
+  didnt_confirm: "Didn't receive confirmation instructions?"
+  didnt_unlock: "Didn't receive unlock instructions?"
+  log_in_by: "Sign in with"
+
+  categories:
+    show:
+      new_topic: 'New topic'
+
+  edit: 'Edit'
+  delete: 'Delete'
+  create_post: 'Create post'
+  home: 'Home'
+  here: 'You are here:'
+
