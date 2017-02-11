@@ -4,6 +4,7 @@ $logo-color: #F2385A;
 $commentary-color: #58b55e;
 $whyte: #fcfcfc;
 $gray: #232323;
+$light-gray: #eee;
 
 div.topic > ul {
 
@@ -74,7 +75,7 @@ ol#posts {
 ol.topics {
   list-style: none;
   li {
-    border-bottom: 1px $gray solid;
+    border-bottom: 1px $light-gray solid;
     margin: .5em;
 
     li {
@@ -85,9 +86,10 @@ ol.topics {
 
 ol.latest {
   li {
+    list-style: none;
     max-width: 100%;
     margin: .5em;
-    border-bottom: 1px $gray solid;
+    border-bottom: 1px $light-gray solid;
   }
 }
 

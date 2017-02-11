@@ -1,4 +1,5 @@
 ol.latest
+  p = t('latest_posts')
   - Post.latest.each do |post|
     li
       = mini_breadcrumb(post) || 'BEZ TEMATU POWIADOM ADMINA'
