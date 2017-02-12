@@ -3,6 +3,10 @@
 /  Append your own using content_for :javascripts
 = yield :javascripts
 
+script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async=true
+
+script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"
+
 / Google Analytics
 - if !ENV['GOOGLE_ANALYTICS_SITE_ID'].blank?
   javascript:

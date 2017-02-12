@@ -53,12 +53,8 @@ ol#posts {
   margin-top: 2em;
 }
 
-em#logo {
-  font-size: 2em;
-}
-
 .new_post {
-  input {
+  input, textarea {
     margin: 1em;
     width: 95%;
     height: 10em;
@@ -68,6 +64,7 @@ em#logo {
 ol#posts {
   list-style: none;
   li {
+    border-bottom: 1px $light-gray solid;
     margin: .5em;
   }
 }
@@ -97,6 +94,10 @@ ol.latest {
   nav {
     background-color: $gray !important;
     color: $whyte !important;
+  }
+
+  .navbar {
+    margin-bottom: 0;
   }
 
   .navbar-default .navbar-brand {
@@ -152,4 +153,23 @@ ol.latest {
 
 #categorybox {
   @extend #indexbox;
+}
+
+
+h4.bdesc {
+  background: #EFEFEF;
+  padding: .25em;
+  padding-left: 3em;
+  margin-bottom: 20px;
+}
+
+.container {
+  ol.breadcrumb {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .alert {
+    margin-bottom: 0 !important;
+  }
 }

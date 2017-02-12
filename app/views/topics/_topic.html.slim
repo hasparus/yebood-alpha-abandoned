@@ -2,8 +2,8 @@
   ul
     li = link_to topic.name, (category_path(@category) + '/' + topic.topic_slug)
     li = topic.posts.length
-    li = topic.updated_at
-    li = topic.created_at
+    li = topic.updated_at.to_s(:db)
+    li = topic.created_at.to_s(:db)
     li = link_to t(:edit), (category_path(@category) + '/' + topic.topic_slug + '/edit')
     li = link_to t(:delete), category_topic_path(@category, topic), data: {confirm: 'Jesteś pewny?'}, method: :delete
 

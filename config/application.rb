@@ -24,3 +24,7 @@ module Yebood
     end
   end
 end
+
+Rails.application.configure do
+  config.time_zone = "Warsaw"
+end

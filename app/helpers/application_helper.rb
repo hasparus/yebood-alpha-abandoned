@@ -22,6 +22,28 @@ module ApplicationHelper
     @title || controller_name.gsub(/Controller/, '').humanize
   end
 
+  def markdown text
+    options = {
+        safe_links_only: true,
+        prettify: true
+    }
+    markdown = Redcarpet::Markdown.new(
+        Redcarpet::Render::HTML.new(options),
+        {
+          lax_spacing: true,
+          superscript: true,
+          quote: true,
+          autolink: true,
+          tables: true,
+          no_intra_emphasis: true,
+          fenced_code_blocks: true,
+          disable_indented_code_blocks: true
+        }
+    )
+
+    markdown.render(text).html_safe
+  end
+
   class AssetHash
     # TODO: Dodawanie ikon z poziomu administratora.
     # todo Pamietaj o screditsowaniu Pixel Buddhy

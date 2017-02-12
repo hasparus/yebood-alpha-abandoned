@@ -1,3 +1,16 @@
 .post
   strong = post.user.name
-  div = post.content
+  //do helpera!
+  - if @category
+      .pull-right
+        =<> link_to (edit_category_topic_post_path(@category, @topic, post)) do
+          = content_tag :i, 'mode_edit', class: 'material-icons'
+      .pull-right
+        =<> link_to category_topic_post_path(@category, @topic, post), data: {confirm: 'Jesteś pewny?'}, method: :delete do
+          = content_tag :i, 'delete', class: "material-icons"
+      .pull-right
+        - u = post.updated_at
+        - c = post.created_at
+        == c == u ? "#{t('created_at')} #{c.to_s(:db)}" : "#{t('updated_at')} #{u.to_s(:db)}"
+
+  div = markdown(post.content)

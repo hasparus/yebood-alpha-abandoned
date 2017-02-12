@@ -1,6 +1,6 @@
+h4.bdesc = t('latest_posts')
 ol.latest
-  p = t('latest_posts')
   - Post.latest.each do |post|
     li
-      = mini_breadcrumb(post) || 'BEZ TEMATU POWIADOM ADMINA'
+      == mini_breadcrumb(post) || 'BEZ TEMATU POWIADOM ADMINA'
       = render post

@@ -10,6 +10,6 @@ module PostsHelper
   end
 
   def mini_separator
-    '<span style="color: #ccc"> / </span>'
+    content_tag :span, ' / ', style: 'color: #ccc'
   end
 end

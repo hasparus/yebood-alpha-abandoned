@@ -48,6 +48,7 @@ gem 'rails_12factor'
 gem 'slim-rails'
 gem 'haml'
 gem 'gretel'
+gem 'redcarpet'
 
 
 gem 'dotenv-rails'
