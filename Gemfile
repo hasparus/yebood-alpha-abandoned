@@ -50,6 +50,7 @@ gem 'haml'
 gem 'gretel'
 gem 'redcarpet'
 
+gem 'best_in_place', '~> 3.0.1'
 
 gem 'dotenv-rails'
 

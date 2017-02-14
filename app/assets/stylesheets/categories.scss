@@ -16,6 +16,7 @@ ul.categories {
 }
 
 .category-icon {
+  max-width: none;
   $icon-size: 64px;
   width: $icon-size;
   height: $icon-size;

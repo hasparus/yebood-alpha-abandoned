@@ -11,5 +11,11 @@
         span
           - u = post.updated_at
           - c = post.created_at
-          == c == u ? "#{t('created_at')} #{c.to_s(:db)}" : "#{t('updated_at')} #{u.to_s(:db)}"
-  div = markdown(post.content)
+          == ( c == u ? "#{t('created_at')} #{c.to_s(:db)}" : "#{t('updated_at')} #{u.to_s(:db)}" )
+      div
+        = best_in_place post, :content, :as => :textarea, \
+        :ok_button => 'Save', :cancel_button => 'Cancel', \
+        :display_with => lambda { |x| markdown(x) }, \
+        :url => category_topic_post_path(@category, @topic, post)
+    - else
+      div = markdown(post.content)

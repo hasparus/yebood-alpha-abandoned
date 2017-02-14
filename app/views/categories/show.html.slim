@@ -11,7 +11,7 @@
         th = t('updated_at')
         th = t('created_at')
         - if true #!current_user.admin?
-          th = t('edit')
+          /th = t('edit')
           th = t('destroy')
     tbody
       - @category.topics.each do |topic|

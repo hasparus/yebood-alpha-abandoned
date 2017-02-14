@@ -7,8 +7,11 @@ class TopicsController < ApplicationController
   respond_to :html, :json, :js
 
   def show
-    @posts = @topic.posts.order('created_at DESC').paginate(page: params[:page], :per_page => 10)
-
+    if @topic
+      @posts = @topic.posts.order('created_at ASC').paginate(page: params[:page], :per_page => 10)
+    else
+      redirect_to @category
+    end
   end
 
   def new
@@ -28,9 +31,23 @@ class TopicsController < ApplicationController
   end
 
   def update
-    @topic.update(topic_params)
-    flash[:notice] = 'Topic was successfully updated.'
-    respond_with(@category, @topic)
+    respond_to do |format|
+      if @topic.update_attributes(topic_params)
+        format.html {
+          @topic.update(topic_params)
+          flash[:notice] = 'Topic was successfully updated.'
+          respond_with(@category, @topic)
+        }
+        format.json {
+          @topic.update(topic_params)
+          respond_with @category, @topic
+        }
+      else
+        format.json {
+          respond_with @category, @topic
+        }
+      end
+    end
   end
 
   def destroy

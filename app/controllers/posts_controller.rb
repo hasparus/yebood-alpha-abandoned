@@ -35,10 +35,23 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-    flash[:notice] = 'Post was successfully updated.'
-    respond_with @category, @topic
+    if @post.update_attributes(post_params)
+      format.html {
+        #@post.update(post_params)
+        flash[:notice] = 'Post was successfully updated.'
+        respond_with @category, @topic
+      }
+      format.json {
+        #@post.update(topic_params)
+        respond_with_bip(@category, @topic, @post)
+      }
+    else
+      format.json {
+        respond_with_bip(@post)
+      }
+    end
   end
+
 
   def destroy
     @post.destroy
