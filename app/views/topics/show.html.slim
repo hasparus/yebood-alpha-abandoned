@@ -1,10 +1,11 @@
 .row
   - breadcrumb :topic, @topic
-  div
-    p#topic_name
-      h1 = @topic.name
-  = link_to t('edit'), edit_category_topic_path(@category, @topic)
-  = link_to t('back'), category_topics_path
+  .big
+    = link_to category_topics_path do
+      i class='material-icons' arrow_back
+    = link_to edit_category_topic_path(@category, @topic) do
+      i class='material-icons' mode_edit
+    h1#topic_name = @topic.name
 
 .row
   = will_paginate @posts

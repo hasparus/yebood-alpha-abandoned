@@ -1,7 +1,19 @@
 .row
   - breadcrumb :category, @category
   = render @category
-  ol.topics
-    - @category.topics.each do |topic|
-      li = render topic
+.row
+  table.topics
+    thead
+      tr.topic.labels
+        th = t('topic_name')
+        th = t('posts_count')
+        th = t('topic_owner')
+        th = t('updated_at')
+        th = t('created_at')
+        - if true #!current_user.admin?
+          th = t('edit')
+          th = t('destroy')
+    tbody
+      - @category.topics.each do |topic|
+        tr.topic = render topic
   = button_to t('.new_topic'), new_category_topic_path(@category), class: 'btn btn-primary center-block', type: 'button', method: :get
