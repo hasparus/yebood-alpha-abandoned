@@ -8,7 +8,7 @@ class Post < ApplicationRecord
 
   class << self
     def latest how_much=6
-      @latest_posts ||= Post.includes(:topic).limit how_much
+      @latest_posts ||= Post.order('created_at DESC').includes(:topic).limit how_much
     end
   end
 end
