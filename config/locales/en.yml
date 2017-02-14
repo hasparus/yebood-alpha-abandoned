@@ -42,5 +42,6 @@ en:
   delete: 'Delete'
   create_post: 'Create post'
   home: 'Home'
-  here: 'You are here:'
-
+  you_are_here: 'You are here:'
+  kategorie: 'Categories'
+  latest_posts: 'Latest posts'
