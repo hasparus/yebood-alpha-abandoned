@@ -46,3 +46,5 @@ en:
   kategorie: 'Categories'
   latest_posts: 'Latest posts'
   topic_owner: 'Owner'
+  created_at: 'Created at: '
+  updated_at: 'Updated at: '

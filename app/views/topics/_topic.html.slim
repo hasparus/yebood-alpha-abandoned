@@ -1,7 +1,9 @@
 tr
   td = link_to topic.name, (category_path(@category) + '/' + topic.topic_slug)
   td = "#{topic.posts.length}"
-  td == topic.posts.first&.user&.name || 'None'
+  td
+    strong.username
+      == topic.posts.first&.user&.name || 'None'
   td = topic.updated_at.to_s(:db)
   td = topic.created_at.to_s(:db)
   td = link_to t(:edit), (category_path(@category) + '/' + topic.topic_slug + '/edit')

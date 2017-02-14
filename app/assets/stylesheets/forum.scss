@@ -71,9 +71,29 @@ ol#posts {
   }
 }
 
+strong.username {
+  &:before {
+    content: '@';
+  }
+  font-weight: bold;
+  display: inline;
+  //background: $logo-color;
+  //color: $whyte;
+  //padding: 0.1em;
+  //padding-right: 0.25em;
+  //padding-left: 0.25em;
+}
+
 .post {
   .pull-right {
-    padding-right: .75em;
+    display: inline;
+    i {
+      padding-right: .25em;
+    }
+    span {
+      vertical-align: top;
+      padding-right: .75em;
+    }
   }
 }
 

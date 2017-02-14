@@ -25,3 +25,5 @@ pl:
   kategorie: 'Kategorie'
   latest_posts: 'Ostatnie posty'
   topic_owner: 'Właściciel'
+  created_at: 'Utworzony w: '
+  updated_at: 'Edytowany w: '
